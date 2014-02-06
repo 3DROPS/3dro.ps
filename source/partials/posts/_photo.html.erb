@@ -1,0 +1,27 @@
+{block:Photo}
+  {LinkOpenTag}
+  <img class="post--photo__photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+  {LinkCloseTag}
+  <a class="post__author--photo" href="{PostAuthorURL}">
+    <img class="post__author-avatar" src="{PostAuthorPortraitURL-128}" alt="{PostAuthorName}">
+  </a>
+  <div class="post__body">
+    <h1 class="post__title"></h1>
+    <ul class="post__meta">
+      <li class="post__meta-item">
+        <a href="javascript:void(0);">1 hour ago</a>
+      </li>
+      <li class="post__meta-item">
+        <a href="javascript:void(0);">#clientwork</a>
+      </li>
+      <li class="post__meta-item">
+        <a href="javascript:void(0);">#shopify</a>
+      </li>
+    </ul>
+    {block:Caption}
+    <div class="post__caption">
+      {Caption}
+    </div>
+    {/block:Caption}
+  </div>
+{/block:Photo}

@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{Title}</title>
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/243f1c7f-a92c-404d-b501-3764a18b445f.css"/>
+  <%= stylesheet_link_tag "theme" %>
+
+  <%= javascript_include_tag  "modernizr" %>
+
+</head>
+<body>
+  <main class="l-main">
+    <%= yield %>
+  </main>
+
+  <%= javascript_include_tag  "theme" %>
+</body>
+</html>
