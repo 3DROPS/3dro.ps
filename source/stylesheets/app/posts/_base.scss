@@ -51,7 +51,10 @@
 
   &:last-of-type { margin-right: 0; }
 
-  a { color: inherit; }
+  a {
+    color: inherit;
+    font-weight: 200;
+  }
   a:hover { color: darken(#cfd3d5, 10%); }
 }
 
