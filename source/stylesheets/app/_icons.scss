@@ -1,8 +1,8 @@
 @import "compass/utilities/sprites";
 @import "compass/css3/background-size";
 
-// $sprites: sprite-map("icons/*.png", $spacing: 2px);
-// $sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
+$sprites: sprite-map("icons/*.png", $spacing: 2px);
+$sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
 
 @mixin icon($name, $images: $sprites) {
   @include sprite-dimensions($images, $name);
@@ -19,20 +19,25 @@
   }
 }
 
-// .i-base {
-//   background-image: inline-sprite($sprites);
-//   background-repeat: no-repeat;
+.i-base {
+  background-image: inline-sprite($sprites);
+  background-repeat: no-repeat;
 
-//   @include hidpi(2.0) {
-//     background-image: inline-sprite($sprites2x);
-//   }
-// }
+  @include hidpi(2.0) {
+    background-image: inline-sprite($sprites2x);
+  }
+}
 
-// [class^="i-"] {
-//   @extend .i-base;
-//   display: inline-block;
-//   vertical-align: middle;
-// }
+[class^="i-"] {
+  @extend .i-base;
+  display: inline-block;
+  vertical-align: middle;
+}
 
+$icons: close-grey close-white heart-red reblog-green reblog-white share-purple close-purple heart-grey heart-white reblog-grey share-grey share-white twitter facebook;
+
+@each $icon in $icons {
+  .i-#{$icon} { @include icon-with-retina(icon-#{$icon}); }
+}
 
 

@@ -17,6 +17,11 @@
         $el.find('.post__title').text(title.innerText);
       }
     });
+
+    $('.js-share').on('click', function() {
+      $('.js-buttonlist').toggleClass('is-flipped');
+    });
+
   });
 
 })();

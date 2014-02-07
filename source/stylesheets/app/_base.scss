@@ -20,9 +20,8 @@ body {
   @include font-smoothing;
 }
 
-%container {
-  @include outer-container;
-}
+%container { @include outer-container; }
+.clearfix  { @include clearfix; }
 
 a {
   text-decoration: none;
