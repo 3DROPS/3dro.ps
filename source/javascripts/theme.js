@@ -5,6 +5,8 @@
 
 (function() {
 
+  Modernizr.addTest('preserve3d', Modernizr.testAllProps('transformStyle', 'preserve-3d'));
+
   $(document).on('ready', function() {
     $('.post').each(function() {
       var $el    = $(this),

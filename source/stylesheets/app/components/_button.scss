@@ -18,21 +18,55 @@
   color: #dbe2e6;
   background: #fff;
   position: relative;
+  @include transition-property(background, border);
+  @include transition-duration(300ms);
+  @include transition-timing-function(ease);
 
-  &:active {
-    @include transform(translateY(1px));
-    border: none;
-  }
+  &:active { border: none; }
 }
 
 .button__icon {
   @extend .i-base;
   @extend %absolute-center;
+  @include transition(all 300ms ease);
+}
+
+.button__icon--default {
+  @extend .button__icon;
+
+  .button:hover &, .button:active & {
+    opacity: 0;
+    @include transform(scale(.85));
+  }
+}
+
+.button__icon--hover {
+  @extend .button__icon;
+  opacity: 0;
+  @include transform(scale(.85));
+
+  .button:hover & {
+    opacity: 1;
+    @include transform(scale(1));
+  }
+}
+
+.button__icon--active {
+  @extend .button__icon;
+  opacity: 0;
+  @include transform(scale(.85));
+
+  .button:active & {
+    opacity: 1;
+    @include transform(scale(1));
+  }
 }
 
 .multibutton {
-  @include perspective(1000);
-  @include transform-style(preserve-3d);
+  .preserve3d & {
+    @include perspective(1000);
+    @include transform-style(preserve-3d);
+  }
 }
 
 .multibutton, .multibutton__wrap {
@@ -42,14 +76,20 @@
 
 .multibutton__wrap {
   @include transition(all 800ms $ease-out-expo);
-  @include transform-style(preserve-3d);
   position: relative;
+
+  .preserve3d & {
+    @include transform-style(preserve-3d);
+  }
 }
 
 .multibutton__front, .multibutton__back {
-  @include backface-visibility(hidden);
   @include transition(all 800ms $ease-out-expo);
-  @include transform-style(preserve-3d);
+
+  .preserve3d & {
+    @include backface-visibility(hidden);
+    @include transform-style(preserve-3d);
+  }
 
   position: absolute;
   top: 0;
@@ -58,13 +98,40 @@
 
 .multibutton__front {
   z-index: 2;
-  @include transform(rotateY(0deg));
-  .is-flipped & { @include transform(rotateY(180deg)); }
+
+  .preserve3d & {
+    @include transform(rotateY(0deg));
+  }
+
+  .is-flipped & {
+    .preserve3d & {
+      @include transform(rotateY(180deg));
+    }
+
+    .no-preserve3d & {
+      opacity: 0;
+    }
+  }
 }
 
 .multibutton__back {
-  @include transform(rotateY(-180deg));
-  .is-flipped & { @include transform(rotateY(0deg)); }
+  .preserve3d & {
+    @include transform(rotateY(-180deg));
+  }
+
+  .no-preserve3d & {
+    opacity: 0;
+  }
+
+  .is-flipped & {
+    .preserve3d & {
+      @include transform(rotateY(0deg));
+    }
+
+    .no-preserve3d & {
+      opacity: 1;
+    }
+  }
 }
 
 .button-hover--red     { border-color: #f5c5ce; }
@@ -76,55 +143,66 @@
 
 .button--reblog {
   @extend .button;
-  .button__icon { @extend .i-reblog-grey; }
+  .button__icon--default { @extend .i-reblog-grey; }
+  .button__icon--hover   { @extend .i-reblog-green; }
+  .button__icon--active  { @extend .i-reblog-white; }
 
-  &:hover {
-    @extend .button-hover--green;
-    .button__icon { @extend .i-reblog-green; }
-  }
-
-  &:active {
-    @extend .button-active--green;
-    .button__icon { @extend .i-reblog-white; }
-  }
+  &:hover { @extend .button-hover--green; }
+  &:active { @extend .button-active--green; }
 }
 
 .button--like {
   @extend .button;
-  .button__icon { @extend .i-heart-grey; }
+  .button__icon--default { @extend .i-heart-grey; }
+  .button__icon--hover   { @extend .i-heart-red; }
+  .button__icon--active  { @extend .i-heart-white; }
 
-  &:hover {
-    @extend .button-hover--red;
-    .button__icon { @extend .i-heart-red; }
-  }
-
-  &:active {
-    @extend .button-active--red;
-    .button__icon { @extend .i-heart-white; }
-  }
+  &:hover { @extend .button-hover--red; }
+  &:active { @extend .button-active--red; }
 }
 
 .button--share {
   @extend .button;
-  .button__icon { @extend .i-share-grey; }
+  .button__icon--default { @extend .i-share-grey; }
+  .button__icon--hover   { @extend .i-share-purple; }
+  .button__icon--active  { @extend .i-share-white; }
 
-  &:hover {
-    @extend .button-hover--purple;
-    .button__icon { @extend .i-share-purple; }
+  .button--share__icon--close, .button--share__icon--closeactive {
+    opacity: 0;
+    @extend .button__icon;
+    @include transform(scale(.85));
   }
 
-  &:active {
-    @extend .button-active--purple;
-    .button__icon { @extend .i-share-white; }
+  .button--share__icon--close {
+    @extend .i-close-purple;
   }
+
+  .button--share__icon--closeactive {
+    @extend .i-close-white;
+  }
+
+  &:hover { @extend .button-hover--purple; }
+  &:active { @extend .button-active--purple; }
 
   .is-flipped & {
     @extend .button-hover--purple;
-    .button__icon { @extend .i-close-purple; }
+    .button__icon--default,
+    .button__icon--hover,
+    .button__icon--active  {
+      @include transform(scale(.85));
+      opacity: 0;
+    }
+
+    .button--share__icon--close {
+      opacity: 1;
+      @include transform(scale(1));
+    }
 
     &:active {
-      @extend .button-active--purple;
-      .button__icon { @extend .i-close-white; }
+      .button--share__icon--closeactive {
+        opacity: 1;
+        @include transform(scale(1));
+      }
     }
   }
 }
