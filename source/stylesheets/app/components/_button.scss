@@ -1,0 +1,154 @@
+.button-list {
+  @extend .clearfix;
+
+  > .button, .multibutton {
+    float: left;
+    margin-right: 12px;
+    &:last-child { margin-right: 0; }
+  }
+}
+
+.button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e7ebef;
+  border-radius: 50%;
+  text-align: center;
+  color: #dbe2e6;
+  background: #fff;
+  position: relative;
+
+  &:active {
+    @include transform(translateY(1px));
+    border: none;
+  }
+}
+
+.button__icon {
+  @extend .i-base;
+  @extend %absolute-center;
+}
+
+.multibutton {
+  @include perspective(1000);
+  @include transform-style(preserve-3d);
+}
+
+.multibutton, .multibutton__wrap {
+  width: 50px;
+  height: 50px;
+}
+
+.multibutton__wrap {
+  @include transition(all 800ms $ease-out-expo);
+  @include transform-style(preserve-3d);
+  position: relative;
+}
+
+.multibutton__front, .multibutton__back {
+  @include backface-visibility(hidden);
+  @include transition(all 800ms $ease-out-expo);
+  @include transform-style(preserve-3d);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.multibutton__front {
+  z-index: 2;
+  @include transform(rotateY(0deg));
+  .is-flipped & { @include transform(rotateY(180deg)); }
+}
+
+.multibutton__back {
+  @include transform(rotateY(-180deg));
+  .is-flipped & { @include transform(rotateY(0deg)); }
+}
+
+.button-hover--red     { border-color: #f5c5ce; }
+.button-active--red    { background: #ec3c5d; }
+.button-hover--green   { border-color: #b8eacf; }
+.button-active--green  { background: #24b568; }
+.button-hover--purple  { border-color: #e1cff1; }
+.button-active--purple { background: #a36fd5; }
+
+.button--reblog {
+  @extend .button;
+  .button__icon { @extend .i-reblog-grey; }
+
+  &:hover {
+    @extend .button-hover--green;
+    .button__icon { @extend .i-reblog-green; }
+  }
+
+  &:active {
+    @extend .button-active--green;
+    .button__icon { @extend .i-reblog-white; }
+  }
+}
+
+.button--like {
+  @extend .button;
+  .button__icon { @extend .i-heart-grey; }
+
+  &:hover {
+    @extend .button-hover--red;
+    .button__icon { @extend .i-heart-red; }
+  }
+
+  &:active {
+    @extend .button-active--red;
+    .button__icon { @extend .i-heart-white; }
+  }
+}
+
+.button--share {
+  @extend .button;
+  .button__icon { @extend .i-share-grey; }
+
+  &:hover {
+    @extend .button-hover--purple;
+    .button__icon { @extend .i-share-purple; }
+  }
+
+  &:active {
+    @extend .button-active--purple;
+    .button__icon { @extend .i-share-white; }
+  }
+
+  .is-flipped & {
+    @extend .button-hover--purple;
+    .button__icon { @extend .i-close-purple; }
+
+    &:active {
+      @extend .button-active--purple;
+      .button__icon { @extend .i-close-white; }
+    }
+  }
+}
+
+.button--facebook {
+  @extend .button;
+  background: #3b5997;
+  border: none;
+
+  .button__icon {
+    @extend .i-facebook;
+    bottom: -19px;
+    right: -8px;
+  }
+}
+
+.button--twitter {
+  @extend .button;
+  background: #39a7df;
+  border: none;
+
+  .button__icon {
+    @extend .i-twitter;
+    bottom: -6px;
+    right: -6px;
+  }
+}
