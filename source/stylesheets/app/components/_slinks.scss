@@ -15,6 +15,7 @@
   margin-right: 16px;
 
   &:last-child { margin-right: 0; }
+  &:active { @include transform(translateY(1px)); }
 
   a {
     display: block;

@@ -1,13 +1,35 @@
-<header class="l-header"></header>
+<header class="l-header">
+  <nav class="sitenav">
+    <ul class="sitenav__list">
+      <li class="sitenav__item">
+        <a href="/" class="active">
+          <img src="/images/logo.svg">
+        </a>
+      </li>
+      <li class="sitenav__item">
+        <a href="javascript:void(0);">About</a>
+      </li>
+    </ul>
+    <ul class="sitenav__altlist">
+      <li class="sitenav__item">
+        <a href="javascript:void(0);">Get in touch</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <section class="l-header-lead">
   <h1 class="lead">We help startups turn their ideas into modern digital products</h1>
 </section>
+
 <section class="l-posts">
   <%= partial "partials/posts" %>
 </section>
+
 <section class="l-footer-lead">
   <h1 class="lead">Have a project in mind? <br class="hidden-inline-xs">We would love to <a href="mailto:hello@3dro.ps">hear from you</a></h1>
 </section>
+
 <footer class="l-footer">
   <ul class="slinks">
     <li class="slinks__facebook">
