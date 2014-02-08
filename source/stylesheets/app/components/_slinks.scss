@@ -1,3 +1,17 @@
+@include keyframes(slinks-item-pop) {
+  0% {
+    @include transform(scale(1));
+  }
+
+  50% {
+    @include transform(scale(.95));
+  }
+
+  100% {
+    @include transform(scale(1));
+  }
+}
+
 .slinks {
   margin: 0;
   padding: 0;
@@ -15,7 +29,15 @@
   margin-right: 16px;
 
   &:last-child { margin-right: 0; }
-  &:active { @include transform(translateY(1px)); }
+
+  .no-touch & {
+    @include transition(all 200ms ease);
+    &:hover { @include transform(translateY(-6px)); }
+    &:active {
+      @include transition(none);
+      @include transform(translateY(-5px));
+    }
+  }
 
   a {
     display: block;
