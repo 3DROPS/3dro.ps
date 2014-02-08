@@ -18,10 +18,10 @@
         $title.remove();
         $el.find('.post__title').text(title.innerText);
       }
-    });
 
-    $('.js-share').on('click', function() {
-      $('.js-buttonlist').toggleClass('is-flipped');
+      $el.find('.js-share').on('click', function() {
+        $el.find('.js-buttonlist').toggleClass('is-flipped');
+      });
     });
 
   });

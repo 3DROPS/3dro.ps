@@ -34,10 +34,11 @@ $sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
   vertical-align: middle;
 }
 
-$icons: close-grey close-white heart-red reblog-green reblog-white share-purple close-purple heart-grey heart-white reblog-grey share-grey share-white twitter facebook;
+$icons: close-grey close-white heart-red reblog-green reblog-white share-purple close-purple heart-grey heart-white reblog-grey share-grey share-white twitter-small facebook-small twitter-large facebook-large dribbble-large github-large mail-large;
 
 @each $icon in $icons {
   .i-#{$icon} { @include icon-with-retina(icon-#{$icon}); }
 }
+
 
 

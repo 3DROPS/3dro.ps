@@ -1,0 +1,84 @@
+.slinks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.slinks__item {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-right: 16px;
+
+  &:last-child { margin-right: 0; }
+
+  a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slinks__icon {
+  @extend .i-base;
+  @extend %absolute-center;
+}
+
+.slinks__facebook,
+.slinks__twitter,
+.slinks__dribbble,
+.slinks__github,
+.slinks__email {
+  @extend .slinks__item;
+}
+
+.slinks__facebook {
+  background: #3b5998;
+
+  .slinks__icon {
+    @extend .i-facebook-large;
+    bottom: -25px;
+    right: -10px;
+  }
+}
+
+.slinks__twitter {
+  background: #00acee;
+
+  .slinks__icon {
+    @extend .i-twitter-large;
+    bottom: -6px;
+    right: -6px;
+  }
+}
+
+.slinks__dribbble {
+  background: #ea4c89;
+
+  .slinks__icon {
+    @extend .i-dribbble-large;
+  }
+}
+
+.slinks__github {
+  background: #171515;
+
+  .slinks__icon {
+    @extend .i-github-large;
+    bottom: -4px;
+  }
+}
+
+.slinks__email {
+  background: #41b781;
+
+  .slinks__icon {
+    @extend .i-mail-large;
+    left: -6px;
+  }
+}

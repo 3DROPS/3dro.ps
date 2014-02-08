@@ -17,5 +17,49 @@
   <%#= partial "partials/posts/text" %>
   <%#= partial "partials/posts/video" %>
 
+  <div class="post__actions">
+    <div class="button-list js-buttonlist">
+      <div class="multibutton">
+        <div class="multibutton__wrap">
+          <div class="multibutton__front">
+            <a class="button--like" href="javascript:void(0);">
+              <i class="button__icon--default"></i>
+              <i class="button__icon--hover"></i>
+              <i class="button__icon--active"></i>
+            </a>
+          </div>
+          <div class="multibutton__back">
+            <a class="button--facebook" href="javascript:void(0);">
+              <i class="button__icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="multibutton">
+        <div class="multibutton__wrap">
+          <div class="multibutton__front">
+            <a class="button--reblog" href="javascript:void(0);">
+              <i class="button__icon--default"></i>
+              <i class="button__icon--hover"></i>
+              <i class="button__icon--active"></i>
+            </a>
+          </div>
+          <div class="multibutton__back">
+            <a class="button--twitter" href="javascript:void(0);">
+              <i class="button__icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="button--share js-share" href="javascript:void(0);">
+        <i class="button__icon--default"></i>
+        <i class="button__icon--hover"></i>
+        <i class="button__icon--active"></i>
+        <i class="button--share__icon--close"></i>
+        <i class="button--share__icon--closeactive"></i>
+      </a>
+    </div>
+  </div>
+
 </article>
 {/block:Posts}

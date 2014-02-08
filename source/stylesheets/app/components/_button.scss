@@ -1,5 +1,6 @@
 .button-list {
   @extend .clearfix;
+  display: inline-block;
 
   > .button, .multibutton {
     float: left;
@@ -213,7 +214,7 @@
   border: none;
 
   .button__icon {
-    @extend .i-facebook;
+    @extend .i-facebook-small;
     bottom: -19px;
     right: -8px;
   }
@@ -225,7 +226,7 @@
   border: none;
 
   .button__icon {
-    @extend .i-twitter;
+    @extend .i-twitter-small;
     bottom: -6px;
     right: -6px;
   }
