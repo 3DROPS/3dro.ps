@@ -1,15 +1,7 @@
 @include keyframes(slinks-item-pop) {
-  0% {
-    @include transform(scale(1));
-  }
-
-  50% {
-    @include transform(scale(.95));
-  }
-
-  100% {
-    @include transform(scale(1));
-  }
+  0%   { @include transform(scale(1)); }
+  50%  { @include transform(scale(.95)); }
+  100% { @include transform(scale(1)); }
 }
 
 .slinks {
@@ -21,12 +13,18 @@
 }
 
 .slinks__item {
-  width: 70px;
-  height: 70px;
+  width: 46px;
+  height: 46px;
   display: inline-block;
   vertical-align: middle;
   border-radius: 50%;
-  margin-right: 16px;
+  margin-right: 10px;
+
+  @include media($screen-br-sm) {
+    width: 70px;
+    height: 70px;
+    margin-right: 16px;
+  }
 
   &:last-child { margin-right: 0; }
 
@@ -64,9 +62,13 @@
   background: #3b5998;
 
   .slinks__icon {
-    @extend .i-facebook-large;
-    bottom: -25px;
-    right: -10px;
+    bottom: -16px;
+    right: -5px;
+
+    @include media($screen-br-sm) {
+      bottom: -25px;
+      right: -10px;
+    }
   }
 }
 
@@ -74,17 +76,26 @@
   background: #00acee;
 
   .slinks__icon {
-    @extend .i-twitter-large;
-    bottom: -6px;
-    right: -6px;
+    bottom: -3px;
+    right: -3px;
+
+    @include media($screen-br-sm) {
+      bottom: -6px;
+      right: -6px;
+    }
   }
 }
 
 .slinks__dribbble {
   background: #ea4c89;
-
   .slinks__icon {
-    @extend .i-dribbble-large;
+    bottom: -2px;
+    right: -2px;
+
+    @include media($screen-br-sm) {
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 
@@ -92,8 +103,8 @@
   background: #171515;
 
   .slinks__icon {
-    @extend .i-github-large;
-    bottom: -4px;
+    bottom: -2px;
+    @include media($screen-br-sm) { bottom: -4px; }
   }
 }
 
@@ -101,7 +112,11 @@
   background: #41b781;
 
   .slinks__icon {
-    @extend .i-mail-large;
-    left: -6px;
+    left: -3px;
+    bottom: -2px;
+    @include media($screen-br-sm) {
+      left: -6px;
+      bottom: 0;
+    }
   }
 }

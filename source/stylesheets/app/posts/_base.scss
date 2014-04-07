@@ -90,8 +90,12 @@
 }
 
 .post__caption {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: left;
+
+  @include media($screen-br-sm) {
+    margin-top: 50px;
+  }
 
   p {
     margin-bottom: 30px;
