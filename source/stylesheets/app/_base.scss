@@ -27,7 +27,7 @@ a {
   text-decoration: none;
   color: #1ec7f0;
   font-weight: 400;
-  @include transition(color 200ms ease-in-out);
+  @include transition(color 100ms ease-in-out);
 
   &:hover, &:active {
     color: darken(#1ec7f0, 15%);

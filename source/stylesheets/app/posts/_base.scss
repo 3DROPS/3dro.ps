@@ -1,16 +1,26 @@
 .post {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+
+  @include media($screen-br-sm) {
+    margin-bottom: 100px;
+  }
 }
 
 .post__author {
-  width: 108px;
-  height: 108px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
   border: 8px solid #fff;
-  margin-top: -54px;
+  margin-top: -35px;
+
+  @include media($screen-br-sm) {
+    width: 108px;
+    height: 108px;
+    margin-top: -54px;
+  }
 }
 
 .post__author-avatar {
@@ -22,15 +32,32 @@
 .post__body {
   width: 100%;
   max-width: 600px;
-  margin: 20px auto 60px;
+  margin: 10px auto 30px;
+
+  @include media($screen-br-sm) {
+    margin: 20px auto 60px;
+  }
+
+}
+
+.post__title,
+.post__meta,
+.post__caption {
+  @include media(max-width $screen-sm-max) {
+    padding: 0 16px;
+  }
 }
 
 .post__title {
-  @include font-size(30px, $line-height: false);
+  @include font-size(21px, $line-height: false);
   line-height: 1.4;
   margin: 0;
   padding: 0;
   // background: pink;
+
+  @include media($screen-br-sm) {
+    @include font-size(30px, $line-height: false);
+  }
 }
 
 .post__meta {
@@ -42,7 +69,10 @@
   display: inline-block;
   max-width: 300px;
   color: #cfd3d5;
-  // background: pink;
+
+  @include media(max-width $screen-sm-max) {
+    @include font-size(14px);
+  }
 }
 
 .post__meta-item {

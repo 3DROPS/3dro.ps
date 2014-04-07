@@ -5,24 +5,40 @@
 }
 
 .l-header {
-  margin-bottom: 168px;
+  margin-bottom: 68px;
+  padding: 0 16px;
+
+  @include media($screen-br-sm) {
+    margin-bottom: 168px;
+    padding: 0;
+  }
 }
 
 .l-header-lead {
-  padding: 0 140px;
+  padding: 0 32px;
 }
 
 .l-footer-lead {
-  padding: 0 140px;
+  padding: 0 32px;
 }
 
 .l-footer {
-  margin-top: 100px;
-  margin-bottom: 180px
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @include media($screen-br-sm) {
+    margin-top: 100px;
+    margin-bottom: 180px;
+  }
 }
 
 .l-posts {
   width: 100%;
-  padding-top: 168px;
-  padding-bottom: 40px;
+  padding-top: 68px;
+  padding-bottom: 20px;
+
+  @include media($screen-br-sm) {
+    padding-top: 168px;
+    padding-bottom: 40px;
+  }
 }

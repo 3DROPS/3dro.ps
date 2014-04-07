@@ -7,11 +7,17 @@ h1, .alpha, h2, .beta, h3, .gamma, h4, .delta, h5, .epsilon, h6, .zeta,  {
 
 h1.lead {
   margin: 0;
-  @include font-size(36px, $line-height: false);
-  line-height: 52px;
   text-align: center;
+  @include font-size(24px, $line-height: false);
+  line-height: 36px;
+
 
   a { font-weight: inherit; }
+
+  @include media($screen-br-sm) {
+    @include font-size(36px, $line-height: false);
+    line-height: 52px;
+  }
 }
 
 h1,.alpha{
