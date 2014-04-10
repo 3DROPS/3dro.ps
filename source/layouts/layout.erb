@@ -20,7 +20,11 @@
 </head>
 <body>
   <main class="l-main">
+    <%= partial 'partials/header' %>
+
     <%= yield %>
+
+    <%= partial 'partials/footer' %>
   </main>
 
   <%= javascript_include_tag  "theme" %>

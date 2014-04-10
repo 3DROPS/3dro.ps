@@ -1,0 +1,19 @@
+<header class="l-header">
+  <nav class="sitenav">
+    <ul class="sitenav__list">
+      <li class="sitenav__item">
+        <% nav_link_to '/' do %>
+          <%= image_tag 'logo.svg', class: 'sitenav__logo' %>
+        <% end %>
+      </li>
+      <li class="sitenav__item">
+        <%= nav_link_to 'About', '/about' %>
+      </li>
+    </ul>
+    <ul class="sitenav__altlist">
+      <li class="sitenav__item">
+        <a href="mailto:hello@3dro.ps" class="sitenav__contact">Get in touch</a>
+      </li>
+    </ul>
+  </nav>
+</header>
