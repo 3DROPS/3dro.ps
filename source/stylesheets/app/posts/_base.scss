@@ -5,6 +5,8 @@
   @include media($screen-br-sm) {
     margin-bottom: 100px;
   }
+
+  &:last-of-type { margin-bottom: 0; }
 }
 
 .post__author {
@@ -57,6 +59,11 @@
 
   @include media($screen-br-sm) {
     @include font-size(30px, $line-height: false);
+  }
+
+  a {
+    color: inherit;
+    font-weight: inherit;
   }
 }
 

@@ -8,15 +8,15 @@
   Modernizr.addTest('preserve3d', Modernizr.testAllProps('transformStyle', 'preserve-3d'));
 
   $(document).on('ready', function() {
-    $('.post').each(function() {
+    $('.js-post').each(function() {
       var $el    = $(this),
-          $title = $el.find('.post__caption h1'),
+          $title = $el.find('.js-post-caption h1'),
           title;
 
       if ($title.get(0)) {
         title = $title.get(0);
         $title.remove();
-        $el.find('.post__title').text(title.innerText);
+        $el.find('.js-post-title').text(title.innerText);
       }
 
       $el.find('.js-share').on('click', function() {

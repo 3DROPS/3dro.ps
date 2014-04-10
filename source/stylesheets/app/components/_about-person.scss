@@ -1,0 +1,40 @@
+.about-person {}
+
+.about-person__avatar {
+  display: inline-block;
+  width: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  @include background-size(contain);
+}
+
+.about-person__avatar--farzad {
+  @extend .about-person__avatar;
+  background-image: image-url('farzad.png');
+  padding-bottom: 157.8616352%;
+  max-width: 159px;
+}
+
+.about-person__avatar--eric {
+  @extend .about-person__avatar;
+  background-image: image-url('eric.png');
+  padding-bottom: 157.8616352%;
+  max-width: 159px;
+}
+
+.about-person__name,
+.about-person__title {
+  display: block;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.about-person__name {
+  @include font-size(18px);
+  color: #000;
+}
+
+.about-person__title {
+  @include font-size(16px);
+  color: inherit;
+}

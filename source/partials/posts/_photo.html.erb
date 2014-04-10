@@ -6,7 +6,7 @@
     <img class="post__author-avatar" src="{PostAuthorPortraitURL-128}" alt="{PostAuthorName}">
   </a>
   <div class="post__body">
-    <h1 class="post__title"></h1>
+    <h1 class="post__title"><a href="{Permalink}" class="js-post-title"></a></h1>
     <ul class="post__meta">
       <li class="post__meta-item">
         <a href="{Permalink}">1 hour ago</a>
@@ -20,7 +20,7 @@
       {/block:HasTags}
     </ul>
     {block:Caption}
-    <div class="post__caption">
+    <div class="post__caption js-post-caption">
       {Caption}
     </div>
     {/block:Caption}
