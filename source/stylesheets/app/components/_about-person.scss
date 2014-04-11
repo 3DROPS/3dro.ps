@@ -6,6 +6,10 @@
   background-position: center bottom;
   background-repeat: no-repeat;
   @include background-size(contain);
+
+  @include media($screen-br-sm) {
+    margin-bottom: 20px;
+  }
 }
 
 .about-person__avatar--farzad {
@@ -26,7 +30,10 @@
 .about-person__title {
   display: block;
   text-align: left;
-  padding-left: 30px;
+
+  @include media($screen-br-sm) {
+    padding-left: 30px;
+  }
 }
 
 .about-person__name {
@@ -36,5 +43,6 @@
 
 .about-person__title {
   @include font-size(16px);
-  color: inherit;
+  color: $base-text-color;
+  margin-top: -6px;
 }
