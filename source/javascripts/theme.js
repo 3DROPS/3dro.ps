@@ -11,7 +11,9 @@
     $('.js-post').each(function() {
       var $el    = $(this),
           $title = $el.find('.js-post-caption h1'),
-          title;
+          title,
+          $like  = $el.find('.js-like'),
+          $reblog = $el.find('.js-reblog');
 
       if ($title.get(0)) {
         title = $title.get(0);
@@ -22,8 +24,37 @@
       $el.find('.js-share').on('click', function() {
         $el.find('.js-buttonlist').toggleClass('is-flipped');
       });
-    });
 
+      $el.find('.like_button')
+        .on('mousedown', function() {
+          $like.addClass('active');
+        })
+        .on('mouseup', function() {
+          $like.removeClass('active');
+        })
+        .on('mouseenter', function() {
+          $like.addClass('hover');
+        })
+        .on('mouseleave', function() {
+          $like.removeClass('hover');
+        });
+
+      $el.find('.reblog_button')
+        .on('mousedown', function() {
+          $reblog.addClass('active');
+        })
+        .on('mouseup', function() {
+          $reblog.removeClass('active');
+        })
+        .on('mouseenter', function() {
+          $reblog.addClass('hover');
+        })
+        .on('mouseleave', function() {
+          $reblog.removeClass('hover');
+          $reblog.removeClass('active');
+        });
+
+    });
   });
 
 })();

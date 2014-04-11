@@ -22,14 +22,15 @@
       <div class="multibutton">
         <div class="multibutton__wrap">
           <div class="multibutton__front">
-            <a class="button--like" href="javascript:void(0);">
+            {LikeButton}
+            <a class="button--like js-like" href="javascript:void(0);">
               <i class="button__icon--default"></i>
               <i class="button__icon--hover"></i>
               <i class="button__icon--active"></i>
             </a>
           </div>
           <div class="multibutton__back">
-            <a class="button--facebook" href="javascript:void(0);">
+            <a class="button--facebook" href="http://facebook.com/sharer.php?u={Permalink}" target="_blank">
               <i class="button__icon"></i>
             </a>
           </div>
@@ -38,14 +39,15 @@
       <div class="multibutton">
         <div class="multibutton__wrap">
           <div class="multibutton__front">
-            <a class="button--reblog" href="javascript:void(0);">
+            {ReblogButton}
+            <a class="button--reblog js-reblog" href="javascript:void(0);">
               <i class="button__icon--default"></i>
               <i class="button__icon--hover"></i>
               <i class="button__icon--active"></i>
             </a>
           </div>
           <div class="multibutton__back">
-            <a class="button--twitter" href="javascript:void(0);">
+            <a class="button--twitter" href="https://twitter.com/share?url={Permalink}&text=On+Tumblr" target="_blank">
               <i class="button__icon"></i>
             </a>
           </div>

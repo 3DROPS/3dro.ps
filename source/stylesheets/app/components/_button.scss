@@ -23,7 +23,9 @@
   @include transition-duration(300ms);
   @include transition-timing-function(ease);
 
-  &:active { border: none; }
+  &:active,
+  &.active,
+  { border: none; }
 }
 
 .button__icon {
@@ -35,7 +37,11 @@
 .button__icon--default {
   @extend .button__icon;
 
-  .button:hover &, .button:active & {
+  .button:hover &,
+  .button.hover &,
+  .button:active &,
+  .button.active &,
+   {
     opacity: 0;
     @include transform(scale(.85));
   }
@@ -46,7 +52,8 @@
   opacity: 0;
   @include transform(scale(.85));
 
-  .button:hover & {
+  .button:hover &,
+  .button.hover & {
     opacity: 1;
     @include transform(scale(1));
   }
@@ -57,7 +64,8 @@
   opacity: 0;
   @include transform(scale(.85));
 
-  .button:active & {
+  .button:active &,
+  .button.active & {
     opacity: 1;
     @include transform(scale(1));
   }
@@ -73,6 +81,28 @@
 .multibutton, .multibutton__wrap {
   width: 50px;
   height: 50px;
+  position: relative;
+
+  .like_button, .reblog_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    opacity: 0;
+  }
+
+  .reblog_button {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .like_button .like_toggle {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 
 .multibutton__wrap {
@@ -148,8 +178,8 @@
   .button__icon--hover   { @extend .i-reblog-green; }
   .button__icon--active  { @extend .i-reblog-white; }
 
-  &:hover { @extend .button-hover--green; }
-  &:active { @extend .button-active--green; }
+  &:hover, &.hover { @extend .button-hover--green; }
+  &:active, &.active { @extend .button-active--green; }
 }
 
 .button--like {
@@ -158,8 +188,13 @@
   .button__icon--hover   { @extend .i-heart-red; }
   .button__icon--active  { @extend .i-heart-white; }
 
-  &:hover { @extend .button-hover--red; }
-  &:active { @extend .button-active--red; }
+  &:hover, &.hover { @extend .button-hover--red; }
+  &:active, &.active { @extend .button-active--red; }
+}
+
+.like_button.liked + .button--like {
+  @extend .button-hover--red;
+  .button__icon--default { @extend .i-heart-red; }
 }
 
 .button--share {
@@ -182,8 +217,8 @@
     @extend .i-close-white;
   }
 
-  &:hover { @extend .button-hover--purple; }
-  &:active { @extend .button-active--purple; }
+  &:hover, &.hover { @extend .button-hover--purple; }
+  &:active, &.active { @extend .button-active--purple; }
 
   .is-flipped & {
     @extend .button-hover--purple;
