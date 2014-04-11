@@ -31,5 +31,6 @@ a {
 
   &:hover, &:active {
     color: darken(#1ec7f0, 15%);
+    outline: none;
   }
 }
