@@ -39,6 +39,11 @@
 .about-person__name {
   @include font-size(18px);
   color: #000;
+  @include transition(color 200ms ease-in-out);
+
+  .about-person:hover & {
+    color: #1ec7f0;
+  }
 }
 
 .about-person__title {
