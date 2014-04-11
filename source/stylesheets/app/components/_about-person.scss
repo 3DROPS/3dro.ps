@@ -14,20 +14,20 @@
 
 .about-person__avatar--farzad {
   @extend .about-person__avatar;
-  background-image: image-url('farzad.png');
+  background-image: inline-image('farzad.png');
   padding-bottom: 157.8616352%;
   max-width: 159px;
 
-  @include hidpi { background-image: image-url('farzad_2x.png'); }
+  @include hidpi { background-image: inline-image('farzad_2x.png'); }
 }
 
 .about-person__avatar--eric {
   @extend .about-person__avatar;
-  background-image: image-url('eric.png');
+  background-image: inline-image('eric.png');
   padding-bottom: 157.8616352%;
   max-width: 159px;
 
-  @include hidpi { background-image: image-url('eric_2x.png'); }
+  @include hidpi { background-image: inline-image('eric_2x.png'); }
 }
 
 .about-person__name,
